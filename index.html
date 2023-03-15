@@ -1,0 +1,33 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit tests</title>
+    <script>
+      !(function (w, d) {
+        if (!w.rdt) {
+          var p = (w.rdt = function () {
+            p.sendEvent
+              ? p.sendEvent.apply(p, arguments)
+              : p.callQueue.push(arguments);
+          });
+          p.callQueue = [];
+          var t = d.createElement("script");
+          (t.src = "https://www.redditstatic.com/ads/pixel.js"), (t.async = !0);
+          var s = d.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(t, s);
+        }
+      })(window, document);
+      rdt("init", "t2_pcxsl7ek", {
+        optOut: false,
+        useDecimalCurrencyValues: true,
+      });
+      rdt("track", "PageVisit");
+    </script>
+  </head>
+  <body>
+    <h1>Reddit Test</h1>
+    <button>Add to cart</button>
+  </body>
+</html>
